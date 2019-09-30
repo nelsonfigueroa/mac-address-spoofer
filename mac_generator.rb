@@ -59,11 +59,7 @@ mac_address = case manufacturer
                 generate_random_mac_address
               end
 
-if RUBY_PLATFORM =~ /linux/
-  puts 'OS: Linux'
-  puts "Randomizing MAC address...#{mac_address}"
-  puts `sudo ifconfig #{interface} ether #{mac_address}`
-elsif RUBY_PLATFORM =~ /darwin/
+if RUBY_PLATFORM =~ /darwin/
   puts 'OS: MacOS'
   puts "Randomizing MAC address...#{mac_address}"
   puts `sudo ifconfig #{interface} ether #{mac_address}`
