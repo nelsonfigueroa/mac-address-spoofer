@@ -1,4 +1,4 @@
-# MAC Address Generator
+# MAC Address Spoofer
 
 Written using Ruby 2.6.3.
 Only supports MacOS. If you need to spoof a MAC address on a linux OS, check out `macchanger`.
@@ -12,7 +12,7 @@ Only tested on MacOS and Ubuntu (Linux). Windows is not currently supported.
 *Note: You might need to run the script with elevated privileges*
 
 ```sh
-ruby mac_generator.rb [interface] [manufacturer (optional)]
+ruby mac_spoofer.rb [interface] [manufacturer (optional)]
 ```
 
 Current manufacturers available:
@@ -29,11 +29,11 @@ Current manufacturers available:
 Change the MAC address of the `en0` interface to a completely random one:
 
 ```sh
-ruby mac_generator.rb en0
+ruby mac_spoofer.rb en0
 ```
 
 Change the MAC address of the `en0` interface to that of a Dell machine:
 
 ```sh
-ruby mac_generator.rb en0 dell
+ruby mac_spoofer.rb en0 dell
 ```
