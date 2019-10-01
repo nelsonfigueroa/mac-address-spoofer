@@ -7,7 +7,7 @@ This script spoofs your MAC address to a randomized one. A handful of computer m
 
 ## Usage
 
-*Note: You might need to run the script with elevated privileges*
+*Note: Script might ask for administrator password*
 
 ```sh
 ruby mac_spoofer.rb [interface] [manufacturer (optional)]
@@ -21,6 +21,8 @@ Current manufacturers available:
 - Asus
 - Toshiba
 - Acer
+
+The manufacturer should be specified in lowercase as shown in the examples.
 
 ## Examples
 
