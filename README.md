@@ -22,7 +22,7 @@ Current manufacturers available:
 - Toshiba
 - Acer
 
-The manufacturer should be specified in lowercase as shown in the examples.
+The manufacturer names are spelled exactly as above, just in lowercase. Refer to the examples below.
 
 ## Examples
 
