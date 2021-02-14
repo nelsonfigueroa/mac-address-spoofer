@@ -25,9 +25,8 @@ begin
     parser.on "-i INTERFACE", "--interface INTERFACE" do |interface|
       mac_address = generate_mac_address
       puts "Randomizing MAC address."
-      puts mac_address
       set_mac_address(interface, mac_address)
-      puts "Done!"
+      puts "Done! New MAC address for #{interface}: #{mac_address}"
       exit
     end
 

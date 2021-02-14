@@ -1,43 +1,35 @@
 # MAC Address Spoofer
 
-Written using Ruby 2.6.3.
-Only supports MacOS. If you need to spoof a MAC address on a linux OS, check out `macchanger`.
+Mac Address randomizer. Built for convenience purposes. Only supports MacOS.
 
-This script spoofs your MAC address to a randomized one. A handful of computer manufacturers can be specified in order to generate a MAC address based on that manufacturer. If a manufacturer is specified, the first 3 bytes will match the manufacturer's while the last 3 bytes will be randomized. If no manufacturer is specified, the entire 6 bytes of the MAC address will be randomized.
+**Note: It looks like Apple has decided that users cannot change their MAC address in Big Sur. This should still work for older MacOS versions.**
 
 ## Motivation
 
-Using `macchanger` on Linux is a breeze. I wanted the same experience for MacOS.
+Using `macchanger` on Linux is a breeze. I wanted a similar experience for MacOS.
 
 ## Usage
 
-*Note: Script might ask for administrator password*
+You'll need to [install Crystal](https://crystal-lang.org/install/).
 
-```sh
-ruby mac_spoofer.rb [interface] [manufacturer (optional)]
+Build the binary:
+
+```
+crystal build spoof.cr
 ```
 
-Current manufacturers available:
-- Dell
-- HP
-- Apple
-- Lenovo
-- Asus
-- Toshiba
-- Acer
+Then, run the binary while specifying the network interface whose MAC Address you want to randomize. This action requires elevated privileges, so you'll be asked for your password.
+You can run `ifconfig` for a list of your interfaces and their associated MAC address.
 
-The manufacturer names are spelled exactly as above, just in lowercase. Refer to the examples below.
-
-## Examples
-
-Change the MAC address of the `en0` interface to a completely random one:
-
-```sh
-ruby mac_spoofer.rb en0
+```
+./spoof -i en0
 ```
 
-Change the MAC address of the `en0` interface to that of a Dell machine:
+Example output:
 
-```sh
-ruby mac_spoofer.rb en0 dell
+```
+Randomizing MAC address.
+Password:
+
+Done! New MAC address for en0: 35:3e:89:47:e7:5a
 ```
